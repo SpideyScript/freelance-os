@@ -252,3 +252,5 @@ npm run build
 2. **Server**: Deploy `/server` to Node.js hosting (e.g. Render, Railway, AWS ECS, Heroku). Set environment variables in hosting portal.
 3. **Client**: Deploy `/client/dist` to Vercel, Netlify, or Cloudflare Pages.
 4. **Database**: Use MongoDB Atlas with connection string in `MONGODB_URI`.
+#   f r e e l a n c e - o s  
+ 
