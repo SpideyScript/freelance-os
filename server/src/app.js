@@ -18,21 +18,32 @@ export const createApp = () => {
   );
 
   // CORS configuration
-  app.use(cors()); 
-  // app.use(
-  //   cors({
-  //     origin: [
-  //       'http://localhost:5173',
-  //       'http://localhost:3000',
-  //       'http://127.0.0.1:5173',
-  //       ENV.CLIENT_URL,
-  //     ].filter(Boolean),
-  //     credentials: true,
-  //     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  //     allowedHeaders: ['Content-Type', 'Authorization'],
-  //   })
-  // );
+  const allowedOrigins = [
+    'https://freelance-os-client.vercel.app',
+    'http://localhost:5173',
+    'http://localhost:3000',
+    'http://127.0.0.1:5173'
+  ];
 
+// 2. Configure CORS middleware
+  const corsOptions = {
+    origin: function (origin, callback) {
+      // allow requests with no origin (like Postman or curl)
+      if (!origin || allowedOrigins.indexOf(origin) !== -1) {
+        callback(null, true);
+      } else {
+        callback(null, false); // Don't throw Error() — return false to avoid preflight crash
+      }
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+    optionsSuccessStatus: 204
+  };
+
+// 3. Apply CORS before rate-limiters and routes
+  app.use(cors(corsOptions));
+  app.options('*', cors(corsOptions)); // explicitly handle OPTIONS preflight
   // Request Rate Limiting
   app.use('/api', globalLimiter);
 
