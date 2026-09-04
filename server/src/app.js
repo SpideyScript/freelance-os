@@ -18,20 +18,28 @@ export const createApp = () => {
   );
 
   // CORS configuration
-  app.use(cors()); 
-  // app.use(
-  //   cors({
-  //     origin: [
-  //       'http://localhost:5173',
-  //       'http://localhost:3000',
-  //       'http://127.0.0.1:5173',
-  //       ENV.CLIENT_URL,
-  //     ].filter(Boolean),
-  //     credentials: true,
-  //     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
-  //     allowedHeaders: ['Content-Type', 'Authorization'],
-  //   })
-  // );
+ const allowedOrigins = [
+  'http://localhost:5173',
+  'http://localhost:3000',
+  'http://127.0.0.1:5173',
+  'https://freelance-os-client.vercel.app', // Your exact Vercel frontend URL
+  process.env.CLIENT_URL,
+].filter(Boolean);
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      // Allow requests with no origin (like Postman or mobile curl)
+      if (!origin || allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(new Error('Blocked by CORS'));
+    },
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+  })
+);
 
   // Request Rate Limiting
   app.use('/api', globalLimiter);
