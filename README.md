@@ -8,25 +8,23 @@
 
 <br/>
 
-![Build Status](https://img.shields.io/github/actions/workflow/status/yourusername/freelance-business-os/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=Build)
+![Build Status](https://img.shields.io/github/actions/workflow/status/SpideyScript/freelance-os/ci.yml?branch=main&style=for-the-badge&logo=githubactions&logoColor=white&label=Build)
 ![License](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)
-![Stars](https://img.shields.io/github/stars/yourusername/freelance-business-os?style=for-the-badge&logo=github&color=gold)
-![Issues](https://img.shields.io/github/issues/yourusername/freelance-business-os?style=for-the-badge&logo=github)
+![Stars](https://img.shields.io/github/stars/SpideyScript/freelance-os?style=for-the-badge&logo=github&color=gold)
+![Issues](https://img.shields.io/github/issues/SpideyScript/freelance-os?style=for-the-badge&logo=github)
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=for-the-badge)
 
-![Next.js](https://img.shields.io/badge/Next.js-000000?style=flat-square&logo=next.js&logoColor=white)
-![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript&logoColor=white)
-![Tailwind](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=javascript&logoColor=black)
+![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)
 ![Node.js](https://img.shields.io/badge/Node.js-339933?style=flat-square&logo=node.js&logoColor=white)
-![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)
-![Stripe](https://img.shields.io/badge/Stripe-635BFF?style=flat-square&logo=stripe&logoColor=white)
-![OpenAI](https://img.shields.io/badge/OpenAI-412991?style=flat-square&logo=openai&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=flat-square&logo=express&logoColor=white)
+![Tailwind](https://img.shields.io/badge/TailwindCSS-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)
 
 <br/>
 
-<img src="https://via.placeholder.com/1200x630/0f172a/ffffff?text=Freelance+Business+OS+%E2%80%94+Dashboard+Preview" alt="Freelance Business OS Banner" width="100%"/>
+<img src="./docs/assets/02-dashboard.png" alt="Freelance Business OS — Dashboard" width="100%"/>
 
-<sub>👆 Replace with an actual product screenshot or GIF walkthrough (e.g. `/docs/assets/dashboard-preview.gif`)</sub>
+<sub>Operations Center dashboard — revenue, receivables, active projects, and AI-driven insights at a glance.</sub>
 
 </div>
 
@@ -38,6 +36,7 @@
 - [The Solution](#-the-solution)
 - [Tech Stack](#️-tech-stack)
 - [Features](#-features)
+- [Screenshots](#-screenshots)
 - [Prerequisites](#-prerequisites)
 - [Quick Start](#-quick-start)
 - [Key Libraries & Dependencies](#-key-libraries--dependencies)
@@ -88,22 +87,22 @@ The result: **lost context, fragmented records, and missed payments** — the th
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=nextjs,react,ts,tailwind,nodejs,express,postgres,prisma,stripe,docker,vercel,githubactions" alt="Tech Stack Icons"/>
+<img src="https://skillicons.dev/icons?i=js,react,nodejs,express,tailwind,mongodb,git,github" alt="Tech Stack Icons"/>
 
 </div>
 
 | Layer | Technology |
 |---|---|
-| **Frontend** | Next.js 14 (App Router), React 18, TypeScript |
-| **Styling / UI** | Tailwind CSS, shadcn/ui, Radix Primitives |
-| **Backend** | Node.js, Express (API layer / webhooks) |
-| **Database** | PostgreSQL + Prisma ORM |
-| **Auth** | NextAuth.js (email, OAuth, magic link) |
-| **Payments** | Stripe SDK (invoicing, subscriptions, payouts) |
-| **AI** | OpenAI API (pitch/email generation) |
-| **File Storage** | AWS S3 / Cloudflare R2 (contract vault) |
-| **PDF Generation** | React-PDF / Puppeteer |
-| **Deployment** | Vercel (frontend) + Railway/Render (API & DB) |
+| **Frontend** | React (Vite/CRA), JavaScript (ES6+) |
+| **Styling / UI** | Tailwind CSS |
+| **Backend** | Node.js, Express.js (REST API) |
+| **Database** | MongoDB + Mongoose ¹ |
+| **Auth** | JWT-based authentication |
+| **AI** | OpenAI API — powers the "Freelance Copilot" assistant ¹ |
+| **PDF Generation** | jsPDF / Puppeteer (invoice & proposal export) ¹ |
+| **Package Manager** | npm |
+
+<sub>¹ Marked items reflect the project's current architecture as best inferred from the app UI — please confirm/update against your actual `package.json` and swap in the real values.</sub>
 
 ---
 
@@ -111,39 +110,68 @@ The result: **lost context, fragmented records, and missed payments** — the th
 
 ### 1. 👥 Client CRM & Contact Management
 - Centralized client profiles with contact details, notes, and tags
-- Full interaction timeline — emails, calls, meetings, and deal stage
-- Custom pipelines (Lead → Proposal Sent → Active → Closed)
+- Track account status — Active, Lead, Inactive — with lifetime revenue per client
 - Quick search and filtering across your entire client base
+- Full interaction timeline linked to projects and invoices
 
 ### 2. 📄 Proposal & Quote Generation
-- Branded, reusable proposal templates
-- Line-item pricing with tax, discounts, and currency support
-- Client-facing e-signature and online approval
-- Convert an accepted quote into an invoice in one click
+- AI-crafted, branded proposals generated from a project brief
+- Track proposal status — Draft, Sent, Accepted
+- Line-item pricing with total investment summary
+- Convert an accepted proposal into a project or invoice in one click
 
 ### 3. 💳 One-Click Invoicing & Billing
-- Auto-numbered, tax-compliant invoices generated instantly
-- Recurring/retainer billing support
-- Multi-currency and multi-language invoice templates
+- Auto-numbered, professional invoices (e.g. `INV-2026-002`)
+- Live status tracking — Draft, Sent, Paid, Overdue
+- Multi-currency support
 - Downloadable PDF + shareable payment link
 
 ### 4. ⏱️ Real-time Payment Tracking & Overdue Reminders
-- Live dashboard of paid, pending, and overdue invoices
-- Automated email/SMS reminders on a configurable schedule
-- Stripe-powered payment status webhooks (instant sync)
-- Revenue analytics — MRR, outstanding balance, aging reports
+- Live dashboard of total collected vs. pending/overdue receivables
+- Automated reminders for invoices past due
+- Cash flow & revenue history charts (trailing 6 months)
+- Client revenue-share breakdown for spotting concentration risk
 
 ### 5. 🔐 Contract Storage & Document Vault
-- Encrypted storage for contracts, NDAs, and signed agreements
-- Version history and audit trail per document
-- Link documents directly to clients and projects
-- Expiry/renewal reminders for time-bound contracts
+- Encrypted document storage for contracts and signed agreements
+- Documents linked directly to clients and projects
+- Enterprise-grade security with JWT authentication
+- Searchable, centralized vault — no more digging through Drive folders
 
 ### 6. 🤖 AI-Powered Email & Pitch Writing Assistant
-- Generate cold outreach pitches from a project brief
-- Draft polished follow-up and reminder emails instantly
-- Tone controls (formal, friendly, concise) powered by OpenAI
-- Context-aware suggestions using client history from your CRM
+- **Freelance Copilot** — an AI business partner with real-time context on your clients, projects, tasks, and invoices
+- Suggested queries: *"Which clients owe me money?"*, *"Draft a client follow-up message"*, *"Why did my revenue decrease?"*
+- Strategic health analysis with actionable recommendations (e.g. rate optimization, follow-up prioritization)
+- Context-aware pitch and email drafting powered by OpenAI
+
+**Bonus — included in the current build:**
+- 📋 **Task Board** — Kanban-style sprint board (To Do / In Progress / Review / Done) with subtasks and AI prioritization
+- 📁 **Projects & Roadmaps** — milestone tracking with hours-progress bars and budget-per-project
+
+---
+
+## 🖼️ Screenshots
+
+<details open>
+<summary><strong>Click to expand / collapse gallery</strong></summary>
+
+| Landing Page | Dashboard |
+|:---:|:---:|
+| <img src="./docs/assets/01-landing.png" width="400"/> | <img src="./docs/assets/02-dashboard.png" width="400"/> |
+
+| Clients CRM | Projects & Roadmaps |
+|:---:|:---:|
+| <img src="./docs/assets/03-clients-crm.png" width="400"/> | <img src="./docs/assets/04-projects.png" width="400"/> |
+
+| Task Board | Proposals & Bids |
+|:---:|:---:|
+| <img src="./docs/assets/05-task-board.png" width="400"/> | <img src="./docs/assets/06-proposals.png" width="400"/> |
+
+| Invoices & Billing | Freelance Copilot (AI) |
+|:---:|:---:|
+| <img src="./docs/assets/07-invoices.png" width="400"/> | <img src="./docs/assets/08-ai-copilot.png" width="400"/> |
+
+</details>
 
 ---
 
@@ -153,18 +181,14 @@ Before you begin, ensure you have the following installed:
 
 | Requirement | Version | Notes |
 |---|---|---|
-| **Node.js** | `v18.17+` (LTS recommended) | [Download](https://nodejs.org) |
-| **Package Manager** | `pnpm ≥ 8` (recommended) / `npm ≥ 9` / `yarn ≥ 1.22` | `pnpm` used in examples below |
-| **PostgreSQL** | `v14+` | Local install or hosted (Supabase, Neon, Railway) |
+| **Node.js** | `v18+` (LTS recommended) | [Download](https://nodejs.org) |
+| **npm** | `v9+` | Ships with Node.js |
+| **MongoDB** | `v6+` | Local install or hosted (MongoDB Atlas) |
 | **Git** | Latest | For cloning the repo |
-| **Docker** *(optional)* | Latest | For containerized local DB setup |
 
-You'll also need API keys for the following third-party services:
+You'll also need an API key for:
 
-- 🔑 **OpenAI API Key** — [platform.openai.com](https://platform.openai.com/api-keys) (for the AI writing assistant)
-- 🔑 **Stripe API Keys** — [dashboard.stripe.com](https://dashboard.stripe.com/apikeys) (for invoicing & payments)
-- 🔑 **SMTP / Email Provider** — Resend, SendGrid, or Postmark (for reminders & notifications)
-- 🔑 **S3-compatible storage keys** — AWS S3 or Cloudflare R2 (for the document vault)
+- 🔑 **OpenAI API Key** — [platform.openai.com](https://platform.openai.com/api-keys) (powers the Freelance Copilot AI assistant)
 
 ---
 
@@ -173,19 +197,21 @@ You'll also need API keys for the following third-party services:
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/freelance-business-os.git
-cd freelance-business-os
+git clone https://github.com/SpideyScript/freelance-os.git
+cd freelance-os
 ```
 
 ### 2. Install dependencies
 
 ```bash
-pnpm install
-# or
 npm install
-# or
-yarn install
 ```
+
+> If the project is split into separate `client/` and `server/` folders, run `npm install` inside each:
+> ```bash
+> cd server && npm install
+> cd ../client && npm install
+> ```
 
 ### 3. Configure environment variables
 
@@ -201,61 +227,47 @@ cp .env.example .env
 ```env
 # ── App ────────────────────────────────────────────────
 NODE_ENV=development
-NEXT_PUBLIC_APP_URL=http://localhost:3000
+PORT=5000
+CLIENT_URL=http://localhost:3000
 
 # ── Database ───────────────────────────────────────────
-DATABASE_URL="postgresql://user:password@localhost:5432/freelance_os"
+MONGO_URI=mongodb://localhost:27017/freelance-os
 
-# ── Auth (NextAuth.js) ─────────────────────────────────
-NEXTAUTH_SECRET=your-random-nextauth-secret
-NEXTAUTH_URL=http://localhost:3000
-GOOGLE_CLIENT_ID=your-google-oauth-client-id
-GOOGLE_CLIENT_SECRET=your-google-oauth-client-secret
+# ── Auth ───────────────────────────────────────────────
+JWT_SECRET=your-random-jwt-secret
+JWT_EXPIRES_IN=7d
 
-# ── Stripe ─────────────────────────────────────────────
-STRIPE_SECRET_KEY=sk_test_xxxxxxxxxxxxxxxx
-STRIPE_PUBLISHABLE_KEY=pk_test_xxxxxxxxxxxxxxxx
-STRIPE_WEBHOOK_SECRET=whsec_xxxxxxxxxxxxxxxx
-
-# ── OpenAI (AI Writing Assistant) ──────────────────────
+# ── OpenAI (Freelance Copilot AI) ──────────────────────
 OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxx
 OPENAI_MODEL=gpt-4o-mini
 
-# ── Email / Notifications ──────────────────────────────
+# ── Email / Notifications (optional) ───────────────────
 EMAIL_PROVIDER=resend
 RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxxxxxx
 EMAIL_FROM="Freelance Business OS <noreply@yourdomain.com>"
-
-# ── File Storage (Contract Vault) ──────────────────────
-STORAGE_PROVIDER=s3
-S3_BUCKET_NAME=freelance-os-documents
-S3_ACCESS_KEY_ID=your-access-key
-S3_SECRET_ACCESS_KEY=your-secret-key
-S3_REGION=us-east-1
 ```
 
 </details>
 
-### 4. Run database migrations & seed data
+### 4. Run database migrations / seed data
 
 ```bash
-pnpm prisma migrate dev
-pnpm prisma db seed
+npm run seed
 ```
 
 ### 5. Launch the development server
 
 ```bash
-pnpm dev
+npm run dev
 ```
 
-Your app will be running at **`http://localhost:3000`** 🎉
+Your app will be running at **`http://localhost:3000`** (frontend) with the API on **`http://localhost:5000`** 🎉
 
 ### 6. Build for production
 
 ```bash
-pnpm build
-pnpm start
+npm run build
+npm start
 ```
 
 ---
@@ -264,19 +276,22 @@ pnpm start
 
 | Library | Purpose |
 |---|---|
-| **`next`** | React framework — routing, SSR, API routes |
-| **`prisma`** / **`@prisma/client`** | Type-safe ORM for PostgreSQL |
-| **`next-auth`** | Authentication (OAuth, credentials, magic links) |
-| **`stripe`** | Payment processing, invoicing, webhook handling |
-| **`openai`** | AI SDK powering the pitch/email writing assistant |
-| **`@react-pdf/renderer`** | Generates invoice & proposal PDFs |
-| **`react-hook-form`** + **`zod`** | Form state management & schema validation |
-| **`@radix-ui/*`** / **`shadcn/ui`** | Accessible, unstyled UI primitives |
+| **`react`** / **`react-dom`** | Core UI library |
+| **`react-router-dom`** | Client-side routing |
+| **`express`** | Backend REST API framework |
+| **`mongoose`** | MongoDB ODM / schema modeling |
+| **`jsonwebtoken`** | JWT-based authentication |
+| **`bcryptjs`** | Password hashing |
+| **`openai`** | AI SDK powering the Freelance Copilot assistant |
+| **`axios`** | HTTP client for frontend ↔ API communication |
 | **`tailwindcss`** | Utility-first styling |
-| **`tanstack/react-query`** | Server-state fetching & caching |
-| **`resend`** | Transactional email delivery (reminders, receipts) |
-| **`date-fns`** | Date manipulation for billing cycles & reminders |
-| **`recharts`** | Revenue & payment analytics charts |
+| **`recharts`** / **`chart.js`** | Revenue & cash flow analytics charts |
+| **`react-hook-form`** | Form state management |
+| **`jspdf`** / **`puppeteer`** | Invoice & proposal PDF generation |
+| **`dotenv`** | Environment variable management |
+| **`cors`** | Cross-origin request handling |
+
+<sub>⚠️ Please cross-check this list against your actual `package.json` files and update as needed — it's provided as a representative baseline for a React + Express + MongoDB stack.</sub>
 
 ---
 
@@ -286,21 +301,23 @@ pnpm start
 <summary><strong>Click to expand folder structure</strong></summary>
 
 ```
-freelance-business-os/
-├── src/
-│   ├── app/                  # Next.js App Router pages & layouts
-│   │   ├── (dashboard)/      # Authenticated dashboard routes
-│   │   ├── (auth)/           # Login / signup routes
-│   │   └── api/              # API routes (webhooks, AI, invoices)
-│   ├── components/           # Reusable UI components
-│   ├── lib/                  # Utilities, Stripe/OpenAI clients
-│   ├── server/                # Business logic & service layer
-│   └── styles/                # Global styles
-├── prisma/
-│   ├── schema.prisma          # Database schema
-│   ├── migrations/            # Migration history
-│   └── seed.ts                 # Seed script
-├── public/                    # Static assets
+freelance-os/
+├── client/                    # React frontend
+│   ├── public/
+│   └── src/
+│       ├── components/        # Reusable UI components
+│       ├── pages/              # Dashboard, CRM, Invoices, Proposals, etc.
+│       ├── context/             # Auth & global state
+│       ├── hooks/                # Custom React hooks
+│       ├── services/              # API call wrappers (axios)
+│       └── App.jsx
+├── server/                    # Express backend
+│   ├── config/                 # DB connection, env config
+│   ├── controllers/             # Route handlers (clients, invoices, proposals, AI)
+│   ├── middleware/               # Auth guards, error handling
+│   ├── models/                    # Mongoose schemas
+│   ├── routes/                     # API route definitions
+│   └── server.js
 ├── .env.example
 ├── package.json
 └── README.md
@@ -313,17 +330,18 @@ freelance-business-os/
 ## 🗺️ Roadmap
 
 - [x] Client CRM & pipeline management
-- [x] Proposal & quote generation
-- [x] Stripe-powered invoicing
-- [x] AI writing assistant (v1)
-- [ ] 📱 Mobile app (React Native)
-- [ ] 🔄 Recurring retainer automation
+- [x] Proposal & quote generation (AI-crafted)
+- [x] One-click invoicing & billing
+- [x] Task board with Kanban workflow
+- [x] Freelance Copilot AI assistant (v1)
+- [ ] 📱 Mobile-responsive PWA
+- [ ] 🔄 Recurring retainer billing automation
+- [ ] 💳 Payment gateway integration (Stripe / Razorpay)
 - [ ] 📊 Advanced analytics & tax reports
-- [ ] 🌍 Multi-language client portal
 - [ ] 🔗 Zapier / Make.com integrations
 - [ ] 🧠 AI-powered project scoping estimator
 
-Have an idea? [Open a feature request →](https://github.com/yourusername/freelance-business-os/issues/new?labels=enhancement)
+Have an idea? [Open a feature request →](https://github.com/SpideyScript/freelance-os/issues/new?labels=enhancement)
 
 ---
 
@@ -333,20 +351,20 @@ Contributions are what make the open-source community amazing. Any contributions
 
 1. **Fork** the repository
 2. **Create** your feature branch
-   ```bash
+```bash
    git checkout -b feature/amazing-feature
-   ```
+```
 3. **Commit** your changes
-   ```bash
+```bash
    git commit -m "Add: amazing feature"
-   ```
+```
 4. **Push** to your branch
-   ```bash
+```bash
    git push origin feature/amazing-feature
-   ```
+```
 5. **Open a Pull Request** and describe your changes
 
-Please read [`CONTRIBUTING.md`](./CONTRIBUTING.md) for our code style guide, commit conventions, and PR review process before submitting.
+Please read [`CONTRIBUTING.md`](./CONTRIBUTING.md) for the code style guide, commit conventions, and PR review process before submitting.
 
 ---
 
@@ -355,7 +373,7 @@ Please read [`CONTRIBUTING.md`](./CONTRIBUTING.md) for our code style guide, com
 Distributed under the **MIT License**. See [`LICENSE`](./LICENSE) for full details.
 
 ```
-MIT License © 2025 Freelance Business OS Contributors
+MIT License © 2026 Freelance Business OS Contributors
 ```
 
 ---
@@ -364,9 +382,9 @@ MIT License © 2025 Freelance Business OS Contributors
 
 <div align="center">
 
-Found a bug or have a feature request? [Open an issue](https://github.com/yourusername/freelance-business-os/issues)
+Found a bug or have a feature request? [Open an issue](https://github.com/SpideyScript/freelance-os/issues)
 
-Have questions? Reach out via [Discussions](https://github.com/yourusername/freelance-business-os/discussions) or email **support@freelancebusinessos.dev**
+Have questions? Reach out via [Discussions](https://github.com/SpideyScript/freelance-os/discussions)
 
 ⭐ **If this project helps you run your freelance business better, consider giving it a star!** ⭐
 
