@@ -157,19 +157,19 @@ The result: **lost context, fragmented records, and missed payments** — the th
 
 | Landing Page | Dashboard |
 |:---:|:---:|
-| <img src="./docs/assets/01-landing.png" width="400"/> | <img src="./docs/assets/02-dashboard.png" width="400"/> |
+| <img src="./freelanceos-screens/Screenshot 2026-09-04 121435.png" width="400"/> | <img src="./freelanceos-screens/Screenshot 2026-09-04 121505.png" width="400"/> |
 
 | Clients CRM | Projects & Roadmaps |
 |:---:|:---:|
-| <img src="./docs/assets/03-clients-crm.png" width="400"/> | <img src="./docs/assets/04-projects.png" width="400"/> |
+| <img src="./freelanceos-screens/Screenshot 2026-09-04 121521.png" width="400"/> | <img src="./freelanceos-screens/Screenshot 2026-09-04 121531.png" width="400"/> |
 
 | Task Board | Proposals & Bids |
 |:---:|:---:|
-| <img src="./docs/assets/05-task-board.png" width="400"/> | <img src="./docs/assets/06-proposals.png" width="400"/> |
+| <img src="./freelanceos-screens/Screenshot 2026-09-04 121545.png" width="400"/> | <img src="./freelanceos-screens/Screenshot 2026-09-04 121558.png" width="400"/> |
 
 | Invoices & Billing | Freelance Copilot (AI) |
 |:---:|:---:|
-| <img src="./docs/assets/07-invoices.png" width="400"/> | <img src="./docs/assets/08-ai-copilot.png" width="400"/> |
+| <img src="./freelanceos-screens/Screenshot 2026-09-04 121613.png" width="400"/> | <img src="./freelanceos-screens/Screenshot 2026-09-04 121623.png" width="400"/> |
 
 </details>
 
