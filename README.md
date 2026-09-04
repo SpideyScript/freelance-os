@@ -22,7 +22,7 @@
 
 <br/>
 
-<img src="./docs/assets/02-dashboard.png" alt="Freelance Business OS — Dashboard" width="100%"/>
+<img src="./freelance-os.png" alt="Freelance Business OS — Dashboard" width="100%"/>
 
 <sub>Operations Center dashboard — revenue, receivables, active projects, and AI-driven insights at a glance.</sub>
 
